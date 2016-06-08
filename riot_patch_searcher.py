@@ -51,7 +51,7 @@ for url in links:
 	
 	parser.feed(html.decode('utf-8'))
 
-# Go through all the patch note links and save the link if there's an occurence
+# Go through all the patch note links and save the link if there's an occurrence
 hits = {}
 for l in list(parser.links):
 	url = url_base + l
@@ -67,4 +67,4 @@ for l in list(parser.links):
 			
 # Sorted on patch number from oldest to newest
 for k in sorted(hits.keys(), key=lambda x: 100*int(x[0])+int(x[2:])):
-	print(hits[k])
+	print(k + ':\t' + hits[k])
