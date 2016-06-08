@@ -64,7 +64,8 @@ for l in list(parser.links):
 		s = re.findall(r'\d+', url)[0]
 		hits[s[0] + '.' + s[1:]] = url # Hits are indexed based on patch number. This will need to be redone if introducing mid-patch notes
 		parser.hits = 0
-			
+
+print('Search string:', parser.search_string)
 # Sorted on patch number from oldest to newest
 for k in sorted(hits.keys(), key=lambda x: 100*int(x[0])+int(x[2:])):
-	print(k + ':\t' + hits[k])
+	print(k, hits[k], sep=':\t')
